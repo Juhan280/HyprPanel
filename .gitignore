@@ -2,3 +2,7 @@
 node_modules
 
 @girs
+
+# pkgbuild
+ags-hyprpanel-git-juhan-*.pkg.tar.zst
+pkg
