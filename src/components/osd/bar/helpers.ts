@@ -20,7 +20,7 @@ const brightnessService = Brightness.get_default();
 export const setupOsdBar = (self: LevelBar): void => {
     self.hook(brightnessService, 'notify::screen', () => {
         self.className = self.className.replace(/\boverflow\b/, '').trim();
-        self.value = brightnessService.screen;
+        self.value = Math.sqrt(brightnessService.screen);
     });
 
     self.hook(brightnessService, 'notify::kbd', () => {

@@ -18,7 +18,7 @@ const brightnessService = Brightness.get_default();
 export const setupOsdLabel = (self: Widget.Label): void => {
     self.hook(brightnessService, 'notify::screen', () => {
         self.className = self.className.replace(/\boverflow\b/, '').trim();
-        self.label = `${Math.round(brightnessService.screen * 100)}`;
+        self.label = `${Math.round(Math.sqrt(brightnessService.screen) * 100)}`;
     });
 
     self.hook(brightnessService, 'notify::kbd', () => {
